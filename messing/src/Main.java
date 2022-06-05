@@ -33,7 +33,7 @@ public class Main {
                 if (Choice2 == 'y') {
                     fighter.getPhyDmg();
                 } else if (Choice2 == 'n') {
-                    System.out.print("If You Do Attack the Game can't run. Enter n for ending Game y To continue: ");
+                    System.out.print("If You Don't Attack the Game can't run. Enter n for ending Game y To continue: ");
                     Choice2 = input.next().charAt(0);
 
                     if (Choice2 == 'n')
@@ -47,7 +47,7 @@ public class Main {
                 if (Choice2 == 'y') {
                     fighter.getElementalDmg();
                 } else if (Choice2 == 'n') {
-                    System.out.print("If You Do Attack the Game can't run. Enter n for ending Game y To continue: ");
+                    System.out.print("If You Don't Attack the Game can't run. Enter n for ending Game y To continue: ");
                     Choice2 = input.next().charAt(0);
                     if (Choice2 == 'n')
                         System.exit(0);
