@@ -8,7 +8,7 @@ public class Fighter {
     Scanner input2 = new Scanner(System.in);
     String name;
 
-    int Characternum = 0,moreC, phyDmg,damage=0,temp=1 ,Attacker,characterChice,afterHp,dice2,fireDmg,burn;
+    int Characternum = 0,moreC,damage=0,temp=1 ,Attacker,characterChice,afterHp,dice2,fireDmg,burn,totalDmg,hp;
 
 
     public void setName() {
@@ -50,8 +50,8 @@ public class Fighter {
         System.out.println("Physical Damage");
 
         if (Characternum > 1) {
-            for (int i = 0; i < Characternum;i++){
-                System.out.println("The Characters are " + temp + ":" + charactersName[i]);
+            for (int i = 1; i < Characternum+1;i++){
+                System.out.println("The Characters are " + i + ":" + charactersName[i-1]);
                 temp++;
             }
 
@@ -62,17 +62,17 @@ public class Fighter {
             characterChice = input.nextInt();
 
 
-            damage = rand.nextInt(200) + 1;
-            afterHp = charactersHp[Characternum -1] -damage;
+            totalDmg = rand.nextInt(200) + 1;
+            afterHp = charactersHp[Characternum -1] -totalDmg;
 
-            System.out.println(charactersName[characterChice - 1] + " took " + damage + " Physical Damage from " + charactersName[Attacker - 1]);
+            System.out.println(charactersName[characterChice - 1] + " took " + totalDmg + " Physical Damage from " + charactersName[Attacker - 1]);
             System.out.println(charactersName[characterChice - 1] + " Now Has: " + afterHp + "HP");
         }
         if (Characternum == 1) {
-            damage = rand.nextInt(100) + 1;
-            afterHp = charactersHp[Characternum -1] -damage;
+            /*damage = rand.nextInt(100) + 1;
+            afterHp = charactersHp[Characternum -1] -damage;*/
 
-            System.out.println(charactersName[characterChice - 1] + " took " + damage + " fall Damage");
+            System.out.println(charactersName[characterChice - 1] + " took " + totalDmg + " fall Damage");
             System.out.println(charactersName[characterChice - 1] + " Now Has: " + afterHp + "HP");
         }
     }
@@ -97,24 +97,23 @@ public class Fighter {
 
                 fireDmg = rand.nextInt(140) + 1;
                 burn = rand.nextInt(60) + 1;
-                int totalDmg = fireDmg +burn;
-                afterHp = charactersHp[Characternum -1] -totalDmg;
+                totalDmg = fireDmg +burn;
+                afterHp = charactersHp[Characternum -1] - totalDmg;
+
 
                 System.out.println(charactersName[characterChice - 1] + " took " + fireDmg + " Fire Damage And " + burn + " Burn Damage " + "from " + charactersName[Attacker - 1]);
                 System.out.println(charactersName[characterChice - 1] + " Now Has: " + afterHp+ "HP");
             }
             if (Characternum == 1) {
 
-                fireDmg = rand.nextInt(140) + 1;
+                /*fireDmg = rand.nextInt(140) + 1;
                 burn = rand.nextInt(60) + 1;
-                int totalDmg = fireDmg +burn;
-                afterHp = charactersHp[Characternum -1] - totalDmg;
+                totalDmg = fireDmg +burn;
+                afterHp = charactersHp[Characternum -1] - totalDmg;*/
 
                 System.out.println(charactersName[characterChice - 1] +  " Some How Hit himself with the Fire Magic and took " + fireDmg+ " Fire Damage and "+ burn + " Burn damage" );
-                System.out.println(charactersName[characterChice - 1] + " Now Has: " + afterHp+ "HP");
+                System.out.println(charactersName[characterChice - 1] + " Now Has: " + afterHp + "HP");
             }
         }
     }
 }
-
-
